@@ -7,5 +7,5 @@ Contributors:
 * Chris Kincanon             [@Cryptobreak](https://github.com/Cryptobreak)		
 * Gustav Gennrich		
 * Michael Xavier		
-* John Brock		
+* John Brock		[@peppertech](https://github.com/peppertech)
 * Jesus “Jesse” Gonzalez	
