@@ -10,6 +10,8 @@
  * http://links.sailsjs.org/docs/config/i18n
  */
 
+console.log('Loading: i18n');
+
 module.exports.i18n = {
 
   // Which locales are supported?

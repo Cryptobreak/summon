@@ -11,6 +11,8 @@
  * http://links.sailsjs.org/docs/config/views
  */
 
+console.log('Loading: Views');
+
 module.exports.views = {
 
   // View engine (aka template language)

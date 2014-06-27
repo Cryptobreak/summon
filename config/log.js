@@ -10,6 +10,8 @@
  * http://links.sailsjs.org/docs/config/log
  */
 
+ console.log('Loading: Log');
+
 module.exports = {
 
   // Valid `level` configs:

@@ -12,6 +12,8 @@
  * http://links.sailsjs.org/docs/config/session
  */
 
+ console.log('Loading: Session');
+
 module.exports.session = {
 
   // Session secret is automatically generated when your new app is created

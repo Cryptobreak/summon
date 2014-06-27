@@ -38,4 +38,6 @@
  * http://en.wikipedia.org/wiki/Cross-site_request_forgery
  */
 
+ console.log('Loading: CSRF');
+
 module.exports.csrf = false;

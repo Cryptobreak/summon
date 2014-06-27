@@ -13,6 +13,7 @@
  * http://sailsjs.org/#!documentation/
  */
 
+console.log('Loading: Policies');
 
 module.exports.policies = {
 

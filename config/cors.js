@@ -23,6 +23,8 @@
  *
  */
 
+console.log('Loading: CORS');
+
 module.exports.cors = {
 
   // Allow CORS on all routes by default?  If not, you must enable CORS on a

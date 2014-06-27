@@ -20,6 +20,8 @@
  * http://links.sailsjs.org/docs/config/routes
  */
 
+ console.log('Loading: Routes');
+
 module.exports.routes = {
 
 

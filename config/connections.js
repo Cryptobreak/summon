@@ -19,9 +19,12 @@
  * http://links.sailsjs.org/docs/config/connections
  */
 
+console.log('Loading: Connections');
+console.log(process.env.MONGOLAB_USERNAME);
+console.log(process.env.MONGOLAB_PASS);
+
 module.exports.connections = {
 
-  'default': 'summon_mongo',
   summon_mongo: {
     module: 'sails-mongo',
     host: 'ds053139.mongolab.com',

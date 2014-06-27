@@ -13,6 +13,8 @@
  * http://links.sailsjs.org/docs/config/blueprints
  */
 
+console.log('Loading: Blueprints');
+
 module.exports.blueprints = {
 
 

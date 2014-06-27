@@ -8,6 +8,9 @@
  * For more information on configuration, check out:
  * http://links.sailsjs.org/docs/config/globals
  */
+
+console.log('Loading: Globals');
+
 module.exports.globals = {
 	_: true,
 	async: true,

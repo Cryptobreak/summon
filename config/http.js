@@ -9,6 +9,8 @@
  * http://links.sailsjs.org/docs/config/http
  */
 
+console.log('Loading: HTTP');
+
 module.exports.http = {
 
   middleware: {
