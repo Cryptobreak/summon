@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testProjectApp')
+angular.module('summonApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',

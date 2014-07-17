@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testProjectApp')
+angular.module('summonApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 

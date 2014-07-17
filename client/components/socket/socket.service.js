@@ -1,7 +1,7 @@
 /* global io */
 'use strict';
 
-angular.module('testProjectApp')
+angular.module('summonApp')
   .factory('socket', function(socketFactory) {
     var retryInterval = 5000;
     var retryTimer;

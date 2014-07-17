@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testProjectApp')
+angular.module('summonApp')
   .controller('AdminCtrl', function ($scope, $http, Auth, User) {
 
     $http.get('/api/users').success(function(users) {

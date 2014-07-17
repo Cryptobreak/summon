@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testProjectApp')
+angular.module('summonApp')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/login', {
