@@ -1,2 +1,0 @@
-# summon
-### a Sails application
