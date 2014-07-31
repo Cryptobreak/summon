@@ -4,8 +4,9 @@ Summon is a pretty obscure project. You've probably never heard of it.
 
 # Setup
 
-1. Run `npm install`.
-2. `sudo npm install -g bower grunt-cli yo generator-angular-fullstack`
+1. Obtain [nvm](https://github.com/creationix/nvm)
+2. Run `npm install`.
+2. `npm install -g bower grunt-cli yo generator-angular-fullstack`
 3. Create a file in `server/config/local.env.js` that looks something like:
 
    ```javascript
