@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var tags = require('mongoose-taggable');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
 
@@ -12,7 +13,6 @@ var UserSchema = new Schema({
   jobTitle: String,
   jobDescription: String,
   isExpert: Boolean,
-  expertIn: Array,
   email: { type: String, lowercase: true },
   role: {
     type: String,
