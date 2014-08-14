@@ -10,7 +10,7 @@ angular.module('summonApp')
             $scope.isCollapsed = true;
             $scope.isLoggedIn = Auth.isLoggedIn;
             $scope.isAdmin = Auth.isAdmin;
-            $scope.getCurrentUser = Auth.getCurrentUser;
+            $scope.currentUser = Auth.getCurrentUser();
 
             $scope.logout = function () {
                 Auth.logout();
@@ -23,13 +23,13 @@ angular.module('summonApp')
 
 
             $scope.getUserName = function () {
-                if ($scope.getCurrentUser.firstName == null || $scope.getCurrentUser.lastName == null)
+                if ($scope.currentUser.firstName == null || $scope.currentUser.lastName == null)
                 {
-                    var currentEmail = $scope.getCurrentUser().email;
+                    var currentEmail = $scope.currentUser.email;
                     var computedName = currentEmail.substring(0, currentEmail.indexOf('@'));
                     return computedName;
                 } else {
-                    return ($scope.getCurrentUser().firstName + " " + $scope.getCurrentUser().lasName);
+                    return ($scope.currentUser.firstName + " " + $scope.currentUser.lastName);
                 }
             };
 
