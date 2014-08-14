@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('summonApp')
-        .controller('SettingsCtrl', function ($scope, User, Auth) {
-            //console.log(User);
+        .controller('SettingsCtrl', function ($scope, Auth, User) {
+//            console.log(User);
+            $scope.user = Auth.getCurrentUser();
             $scope.errors = {};
 
             $scope.changePassword = function (form) {
@@ -20,27 +21,19 @@ angular.module('summonApp')
                 }
             };
 
-            $scope.updateProfile = function (form, User ) {
-                //console.log('This is the update form');
+            $scope.updateProfile = function (form) {
+//                //console.log('This is the update form');
                 $scope.submitted = true;
-                //console.log($scope.user);
-//              TODO: Need to figure out where the AJAX update code should go.
-//              The exports method used below, came from the Things controller, but doesn't 
-//              work here.
-//
-//			// Updates an existing user in the DB.
-//			exports.update = function(req, res) {
-//			  if(req.body._id) { delete req.body._id; }
-//			  User.findById(req.params.id, function (err, user) {
-//				if (err) { return handleError(err); }
-//				if(!user) { return res.send(404); }
-//				var updated = _.merge(user, req.body);
-//				updated.save(function (err) {
-//				  if (err) { return handleError(err); }
-//				  return res.json(200, user);
-//				});
-//			  });
-//			};
-            }
+       User.save($scope.user,
+          function(data) {
+		   console.log("Things updated fine")
+            //currentUser = User.get();
+          },
+          function(err) {
+			  console.log("Error on update: "+ JSON.stringify(err))
+            //return cb(err);
+			}.bind(this)).$promise;
+
+            };
 
         });

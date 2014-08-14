@@ -47,6 +47,11 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
+      'firstName': this.firstName,
+      'lastName': this.lastName,
+      'email': this.email,
+      'jobTitle': this.jobTitle,
+      'jobDescription': this.jobDescription,
       'role': this.role
     };
   });
