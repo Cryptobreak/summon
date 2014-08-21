@@ -90,10 +90,10 @@ exports.update = function(req, res, next) {
   User.findById(userId, function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
-    if (firstName) { user.firstName = firstName; }
-    if (lastName) { user.lastName = lastName; }
-    if (jobTitle) { user.jobTitle = jobTitle; }
-    if (jobDescription) { user.jobDescription = jobDescription; }
+    if (firstName) { user.profile.firstName = firstName; }
+    if (lastName) { user.profile.lastName = lastName; }
+    if (jobTitle) { user.profile.jobTitle = jobTitle; }
+    if (jobDescription) { user.profile.jobDescription = jobDescription; }
     if (email) { user.email = email; }
 
     user.save(function(err) {
