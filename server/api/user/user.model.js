@@ -41,6 +41,30 @@ UserSchema
     return this._password;
   });
 
+
+UserSchema
+  .virtual('update')
+  .set(function(update) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.jobTitle = jobTitle;
+    this.jobDescription = jobDescription;
+  })
+  .get(function() {
+    return {
+      'name': this.name,
+      'firstName': this.firstName,
+      'lastName': this.lastName,
+      'email': this.email,
+      'jobTitle': this.jobTitle,
+      'jobDescription': this.jobDescription,
+      'role': this.role
+    };
+  });
+
+
+
 // Public profile information
 UserSchema
   .virtual('profile')

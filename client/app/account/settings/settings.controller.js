@@ -22,18 +22,22 @@ angular.module('summonApp')
             };
 
             $scope.updateProfile = function (form) {
-//                //console.log('This is the update form');
                 $scope.submitted = true;
-       User.save($scope.user,
-          function(data) {
-		   console.log("Things updated fine")
-            //currentUser = User.get();
-          },
-          function(err) {
-			  console.log("Error on update: "+ JSON.stringify(err))
-            //return cb(err);
-			}.bind(this)).$promise;
 
-            };
+            User.update({
+              firstName: $scope.user.firstName,
+              lastName: $scope.user.lastName,
+              jobTitle: $scope.user.jobTitle,
+              jobDescription: $scope.user.jobDescription,
+              email: $scope.user.email
+            },
+                function (data) {
+                    console.log("Things updated fine");
+                },
+                function (err) {
+                    $scope.updateMsg = "Error on update: " + JSON.stringify(err);
+                });
+
+    };
 
         });

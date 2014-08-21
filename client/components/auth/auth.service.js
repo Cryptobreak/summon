@@ -70,6 +70,32 @@ angular.module('summonApp')
             return cb(err);
           }.bind(this)).$promise;
       },
+
+      /**
+       * Update an existing user
+       *
+       * @param  {Object}   user     - user info
+       * @param  {Function} callback - optional
+       * @return {Promise}
+       */
+      updateUser: function(user, callback) {
+        var cb = callback || angular.noop;
+
+        return User.save(user,
+          function(data) {
+            $cookieStore.put('token', data.token);
+            currentUser = User.get();
+            return cb(user);
+          },
+          function(err) {
+            //this.logout();
+            console.log(JSON.stringify(err));
+            return cb(err);
+          }).$promise;
+      },
+
+
+
       
       /**
        * Change password

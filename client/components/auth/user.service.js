@@ -18,10 +18,11 @@ angular.module('summonApp')
           id:'me'
         }
       },
-      updateProfile: {
+      update: {
           method: 'PUT',
           params:{
-              controller:'update'
+            id:'me',
+            controller:'update'
           }
       }
 	  });
