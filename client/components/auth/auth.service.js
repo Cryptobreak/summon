@@ -70,7 +70,7 @@ angular.module('summonApp')
             return cb(err);
           }.bind(this)).$promise;
       },
-
+      
       /**
        * Change password
        *

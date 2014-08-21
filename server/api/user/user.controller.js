@@ -79,6 +79,32 @@ exports.changePassword = function(req, res, next) {
   });
 };
 
+exports.update = function(req, res, next) {
+  var userId = req.user._id;
+  var firstName = req.user.firstName;
+  var lastName = req.user.lastName;
+  var jobTitle = req.user.jobTitle;
+  var jobDescription = req.user.jobDescription;
+  var email = req.user.email;
+
+  User.findById(userId, function (err, user) {
+    if (err) return next(err);
+    if (!user) return res.send(401);
+    if (firstName) { user.firstName = firstName; }
+    if (lastName) { user.lastName = lastName; }
+    if (jobTitle) { user.jobTitle = jobTitle; }
+    if (jobDescription) { user.jobDescription = jobDescription; }
+    if (email) { user.email = email; }
+
+    user.save(function(err) {
+      if (err) return validationError(res, err);
+      res.send(200);
+    });
+    
+    res.json(user);
+  });
+};
+
 /**
  * Get my info
  */
