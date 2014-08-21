@@ -10,6 +10,10 @@ angular.module('summonApp', [
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
+      .when("/questions", {
+        templateUrl: "questions.html",
+        controller: "QuestionsCtrl"
+      })
       .otherwise({
         redirectTo: '/'
       });
