@@ -11,6 +11,8 @@ var UserSchema = new Schema({
   email: { type: String, lowercase: true },
   firstName: String,
   lastName: String,
+  jobTitle: String,
+  jobDescription: String,
   role: {
     type: String,
     default: 'user'
