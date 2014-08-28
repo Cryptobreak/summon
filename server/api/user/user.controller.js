@@ -80,10 +80,9 @@ exports.changePassword = function(req, res, next) {
 };
 
 exports.update = function(req, res, next) {
-  console.log("body: "+JSON.stringify(req.body));
   var userId = req.user._id;
-  var firstName = String(req.body.firstName);
-  var lastName = String(req.body.lastName);
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
   var jobTitle = req.body.jobTitle;
   var jobDescription = req.body.jobDescription;
   var email = req.body.email;
@@ -91,15 +90,11 @@ exports.update = function(req, res, next) {
   User.findById(userId, function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
-    if (firstName) { user.firstName = firstName; }
-    if (lastName) { user.lastName = lastName; }
-    console.log("lastName: "+lastName);
-    user.profile.lastName = lastName;
-    if (jobTitle) { user.jobTitle = jobTitle; }
-    if (jobDescription) { user.jobDescription = jobDescription; }
-    if (email) { user.email = email; }
-
-    console.log("before save: "+JSON.stringify(user));
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.jobTitle = jobTitle;
+    user.jobDescription = jobDescription;
+    user.email = email;
 
     user.save(function(err) {
       if (err) return validationError(res, err);
