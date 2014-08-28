@@ -92,8 +92,9 @@ exports.update = function(req, res, next) {
     if (err) return next(err);
     if (!user) return res.send(401);
     if (firstName) { user.firstName = firstName; }
+    if (lastName) { user.lastName = lastName; }
     console.log("lastName: "+lastName);
-    user.profile.lastName = lastName; 
+    user.profile.lastName = lastName;
     if (jobTitle) { user.jobTitle = jobTitle; }
     if (jobDescription) { user.jobDescription = jobDescription; }
     if (email) { user.email = email; }
@@ -104,7 +105,7 @@ exports.update = function(req, res, next) {
       if (err) return validationError(res, err);
       res.send(200);
     });
-    
+
     res.json(user);
   });
 };
