@@ -24,13 +24,16 @@ angular.module('summonApp')
             $scope.updateProfile = function (form) {
                 $scope.submitted = true;
 
-            User.update({
+            User.update($scope.user
+
+/*            {
               firstName: $scope.user.firstName,
               lastName: $scope.user.lastName,
               jobTitle: $scope.user.jobTitle,
               jobDescription: $scope.user.jobDescription,
               email: $scope.user.email
-            },
+            }*/
+            ,
                 function (data) {
                     console.log("Things updated fine");
                 },

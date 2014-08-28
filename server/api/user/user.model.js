@@ -40,15 +40,15 @@ UserSchema
 UserSchema
   .virtual('update')
   .set(function(update) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.jobTitle = jobTitle;
-    this.jobDescription = jobDescription;
+    this.firstName = profile.firstName;
+    this.lastName = profile.lastName;
+    this.email = profile.email;
+    this.jobTitle = profile.jobTitle;
+    this.jobDescription = profile.jobDescription;
   })
   .get(function() {
     return {
-      'name': this.name,
+      //'name': this.name,
       'firstName': this.firstName,
       'lastName': this.lastName,
       'email': this.email,

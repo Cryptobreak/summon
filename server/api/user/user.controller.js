@@ -81,21 +81,23 @@ exports.changePassword = function(req, res, next) {
 
 exports.update = function(req, res, next) {
   var userId = req.user._id;
-  var firstName = req.user.firstName;
+/*  var firstName = req.user.firstName;
   var lastName = req.user.lastName;
   var jobTitle = req.user.jobTitle;
   var jobDescription = req.user.jobDescription;
   var email = req.user.email;
-
+*/
   User.findById(userId, function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
-    if (firstName) { user.profile.firstName = firstName; }
+/*    if (firstName) { user.profile.firstName = firstName; }
     if (lastName) { user.profile.lastName = lastName; }
     if (jobTitle) { user.profile.jobTitle = jobTitle; }
     if (jobDescription) { user.profile.jobDescription = jobDescription; }
     if (email) { user.email = email; }
 
+*/    
+    user = req.user;
     user.save(function(err) {
       if (err) return validationError(res, err);
       res.send(200);
