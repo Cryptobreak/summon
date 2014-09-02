@@ -20,9 +20,19 @@
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
-        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getUserName() }}</p> </li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog" title="User Settings"></span></a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+        <li ng-show="isLoggedIn()">
+          <span class="navbar-text" ng-hide="!isCollapsed">Welcome: 
+            <span style="font-weight:bold"> {{ getUserName() }} </span>
+          </span>
+        </li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}">
+          <a href="" ng-click="logout()">Logout</a>
+        </li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}">
+          <a href="/settings">
+          <span ng-hide="!isCollapsed" class="glyphicon glyphicon-cog" title="User Settings"></span>
+          <span ng-show="!isCollapsed" class="navbar-text" title="User Settings">Settings</span></a>
+        </li>
       </ul>
     </div>
   </div>
