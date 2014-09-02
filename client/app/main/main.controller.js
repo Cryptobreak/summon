@@ -2,13 +2,14 @@
 
 angular.module('summonApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
+
+/*    $scope.awesomeThings = [];
+
+  $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
-
     $scope.addThing = function() {
       if($scope.newThing === '') {
         return;
@@ -24,4 +25,6 @@ angular.module('summonApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+*/
+
   });
